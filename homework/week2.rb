@@ -1,15 +1,5 @@
 require "test/unit"
 
-#######################################################
-#
-# Your code starts on line 20.
-#
-# To run the tests from your command line:
-#
-# > rake
-#
-#######################################################
-
 MONOPOLY_GAME = { deeds: {
                     boardwalk: { price: 400, rent: 50 },
                     atlantic: { price: 260, rent: 22 },
@@ -23,28 +13,33 @@ MONOPOLY_GAME = { deeds: {
                   tokens: [ :thimble, :car, :horse, :hat, :wheelbarrow ]
                 }
 
-
-# 1. Implement the method below
 def number_of_tokens
-  # Your Code Goes here
+ MONOPOLY_GAME[:tokens].length
 end
 
-# 2. Implement the method below.
 def sorted_list_of_tokens
-  # Your Code Goes here
+  MONOPOLY_GAME[:tokens].sort
 end
 
+def pick_free_parking_card
+ 'Advance to Free Parking'
+end
 
-# 3. Now, define as many more methods as needed to make all the tests pass:
-#
-#
+def count_number_of_monopoly_cards
+  MONOPOLY_GAME[:cards].length
+end
+
+def rent_for(input)
+  MONOPOLY_GAME[:deeds][input][:rent]
+end
+
+def price_for(input)
+  MONOPOLY_GAME[:deeds][input][:price]
+end
+
+puts "Number of tokens: " + number_of_tokens.to_s
 
 
-####################################################
-#
-# Be sure to read (but not modify) the code below.
-#
-####################################################
 class TestDataContainers < Test::Unit::TestCase
 
   def test_token_count
