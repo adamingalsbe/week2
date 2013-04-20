@@ -22,7 +22,7 @@ def sorted_list_of_tokens
 end
 
 def pick_free_parking_card
- 'Advance to Free Parking'
+ MONOPOLY_GAME[:cards][1]
 end
 
 def count_number_of_monopoly_cards
